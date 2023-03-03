@@ -10,7 +10,8 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Contact = ({ name, email, address, phone, website, company }) => {
+const Contact = ({ contact }) => {
+  const { name, email, phone, website, address, company } = contact;
   const { street, suite, city, zipcode } = address;
 
   const [expanded, setExpanded] = useState(false);
@@ -20,9 +21,9 @@ const Contact = ({ name, email, address, phone, website, company }) => {
   };
 
   return (
-    <Card elevation={5} sx={{ maxWidth: 500 }}>
+    <Card elevation={5} sx={{ maxWidth: 600 }}>
       <CardHeader
-        avatar={<Avatar>{name.charAt(0)}</Avatar>}
+        avatar={<Avatar>{name?.charAt(0)}</Avatar>}
         action={
           <IconButton onClick={handleExpandClick} aria-label="show detail">
             <ExpandMoreIcon />
@@ -43,7 +44,7 @@ const Contact = ({ name, email, address, phone, website, company }) => {
             Website: {website}
           </Typography>
           <Typography variant="body2" color="textSecondary" gutterBottom>
-            Company: {company.name}
+            Company: {company?.name}
           </Typography>
         </CardContent>
       </Collapse>
