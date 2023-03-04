@@ -18,5 +18,5 @@ The application is deployed on Azure using Azure virtual machine and Docker, ens
 
 ## Setup
 
-- run `npm start` if running locally
+- run `npm start` and `npm start` if running locally
 - run `docker-compose up -d` if deploying to a remote server
