@@ -1,0 +1,5 @@
+services:
+  client:
+    build: ../contacts
+    ports:
+      - 80:3000
